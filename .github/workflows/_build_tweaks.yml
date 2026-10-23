@@ -139,7 +139,6 @@ jobs:
           theos_commit: ${{ steps.commit_hashes.outputs.theos }}
 
       - name: Workaround Logos %orig regression
-        if: steps.theos.outputs.cache-hit == 'true'
         run: |
           cd "$THEOS/vendor/logos"
           git fetch --depth=50 origin a62370066a97e36d59b200a9fa10c5091f5e8972
